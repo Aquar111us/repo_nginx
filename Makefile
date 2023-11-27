@@ -6,6 +6,8 @@ start_repo:
 	docker run -d -p 83:44 -p 84:8 nginx:repo
 run_docker: build_repo start_repo
 run_nexus: 
+	mkdir -p /opt/nexus/nexus-data
+	chmod -R 777 /opt/nexus/nexus-data
 	docker-compose -f ./nexus/docker-compose.yaml up -d
 configure_nexus:
 	chmod +x ./nexus/configure-nexus.sh
