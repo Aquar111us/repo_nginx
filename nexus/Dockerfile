@@ -1,5 +1,5 @@
 FROM rockylinux:8 as repo_nginx
-RUN yum install yum-utils createrepo -y
+RUN yum install yum-utils createrepo curl -y
 RUN rm -rf /etc/yum.repos.d/*
 COPY ./*.repo /etc/yum.repos.d/
 RUN mkdir /opt/{7..8}
