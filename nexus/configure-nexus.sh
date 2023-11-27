@@ -8,7 +8,7 @@ until \
       curl "${nexus_url}/service/rest/v1/security/realms/active" \
       -XPUT -sfu "${nexus_user}" \
       -H 'Content-Type: application/json' \
-      -d '["NexusAuthenticatingRealm","NexusAuthorizingRealm","DockerToken"]'
+      -d '["NexusAuthenticatingRealm","DockerToken"]'
     do sleep 10; done
 curl -sfu "${nexus_user}" "${nexus_url}/service/rest/v1/repositories/docker/proxy" \
   -X POST \
