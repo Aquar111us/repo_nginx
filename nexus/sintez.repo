@@ -32,6 +32,14 @@ gpgcheck=0
 module_hotfixes=1
 priority=1
 
+[dab86]
+name=dab86
+baseurl=http://10.0.1.178:8081/repository/yum-proxy/el8.6/
+enabled=0
+gpgcheck=0
+module_hotfixes=1
+priority=1
+
 [pszi02]
 name=pszi02
 baseurl=https://nexus.draszi.fintech.ru/repository/devolopment-dump/v.chemizov/el8.1/
