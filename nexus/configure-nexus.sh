@@ -1,7 +1,7 @@
 #/bin/bash
 nexus_url=http://localhost:8081
-nexus_user="admin:$(cat /opt/nexus/nexus-data/admin.password)"
 until curl -ksf "${nexus_url}/service/rest/v1/status" ; do sleep 10 ; done
+nexus_user="admin:$(cat /opt/nexus/nexus-data/admin.password)"
 sleep 120
 until \
       curl "${nexus_url}/service/rest/v1/security/realms/active" \
