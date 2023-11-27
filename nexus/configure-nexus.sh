@@ -3,7 +3,7 @@ set -x
 nexus_url=http://localhost:8081
 until curl -ksf "${nexus_url}/service/rest/v1/status" ; do sleep 10 ; done
 nexus_user="admin:$(cat /opt/nexus/nexus-data/admin.password)"
-sleep 120
+sleep 40
 until \
       curl "${nexus_url}/service/rest/v1/security/realms/active" \
       -XPUT -sfu "${nexus_user}" \

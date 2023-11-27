@@ -18,7 +18,7 @@ priority=1
 
 [dab8]
 name=dab8
-baseurl=http://10.0.1.178:8086/repository/yum-proxy/el8.1/
+baseurl=http://10.0.1.178:8081/repository/yum-proxy/el8.1/
 enabled=0
 gpgcheck=0
 module_hotfixes=1
@@ -26,7 +26,7 @@ priority=1
 
 [dab7]
 name=dab7
-baseurl=http://10.0.1.178:8086/repository/yum-proxy/el7.7/
+baseurl=http://10.0.1.178:8081/repository/yum-proxy/el7.7/
 enabled=0
 gpgcheck=0
 module_hotfixes=1
