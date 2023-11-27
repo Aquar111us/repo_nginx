@@ -1,4 +1,5 @@
 #/bin/bash
+set -x
 nexus_url=http://localhost:8081
 until curl -ksf "${nexus_url}/service/rest/v1/status" ; do sleep 10 ; done
 nexus_user="admin:$(cat /opt/nexus/nexus-data/admin.password)"
@@ -7,7 +8,7 @@ until \
       curl "${nexus_url}/service/rest/v1/security/realms/active" \
       -XPUT -sfu "${nexus_user}" \
       -H 'Content-Type: application/json' \
-      -d '["NexusAuthenticatingRealm","NexusAuthorizingRealm","LdapRealm","DockerToken"]'
+      -d '["NexusAuthenticatingRealm","NexusAuthorizingRealm","DockerToken"]'
     do sleep 10; done
 curl -sfu "${nexus_user}" "${nexus_url}/service/rest/v1/repositories/docker/proxy" \
   -X POST \
