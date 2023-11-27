@@ -8,6 +8,7 @@ run_docker: build_repo start_repo
 run_nexus: 
 	docker-compose -f ./nexus/docker-compose.yaml up -d
 configure_nexus:
+	chmod +x ./nexus/configure-nexus.sh
 	./nexus/configure-nexus.sh
 get_repo:
 	docker build --no-cache --force-rm --pull -t nginx:repo ./nexus/Dockerfile
